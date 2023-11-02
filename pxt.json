@@ -1,7 +1,7 @@
 {
     "name": "pxt-cardkb",
     "version": "0.0.0",
-    "description": "",
+    "description": "M5 CardKB V1.1 with eventhandler",
     "dependencies": {
         "core": "*"
     },
