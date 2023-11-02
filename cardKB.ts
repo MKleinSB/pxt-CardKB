@@ -26,7 +26,8 @@ namespace CardKB {
         return specialCharacters[128 + negativeCharcode]
     }
 
-    //% block "read Letter %format"
+    //% blockID="readLetter" 
+    //% block="read Letter %format"
     //% block.loc.de="lies Buchstaben im Format %format"
     //% group="Basic"
     export function readLetter(format: characterFormat) {
@@ -48,11 +49,17 @@ namespace CardKB {
     let lastcharcode = 0;
     let aktcharcode = 0;
 
+    /**
+    * Returns the charcode of the current character in the Eventhandler
+    */
     //% block="charcode" group="Events"
     export function lastCharcode() {
         return aktcharcode
     }
 
+    /**
+    * Returns the ASCII code of the current character in the Eventhandler
+    */
     //% block="ASCII" group="Events"
     export function lastCharacter() {
         return String.fromCharCode(aktcharcode)
@@ -61,8 +68,9 @@ namespace CardKB {
     /**
     * Do something when a key on CardKB is pressed.
     */
+    //% blockID="cardKBpressed"
     //% block="on cardKB pressed"
-    //% block.loc.de ="wenn CardKB gedrückt"
+    //% block.loc.de="wenn CardKB gedrückt"
     //% group="Events"
     export function cardKBpressed(handler: () => void) {
         control.onEvent(keyEventID, EventBusValue.MICROBIT_EVT_ANY, handler);
